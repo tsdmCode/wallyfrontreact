@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.homeCard {
+  display: flex;
+  text-align: left;
+  font-family: $font-content;
+  img {
+    width: 140px;
+    height: 208px;
+  }
+}

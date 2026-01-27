@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.navBar {
+  ul {
+    display: flex;
+
+    list-style-type: none;
+
+    li {
+      padding: 1.5rem;
+    }
+    a {
+      text-decoration: none;
+      font-family: $font-content;
+      color: #524641;
+    }
+  }
+}
