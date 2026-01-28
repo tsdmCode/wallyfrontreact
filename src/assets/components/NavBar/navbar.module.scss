@@ -3,16 +3,18 @@
 .navBar {
   ul {
     display: flex;
-
+    gap: 1.5rem;
     list-style-type: none;
-
-    li {
-      padding: 1.5rem;
-    }
+    padding-bottom: 1rem;
     a {
       text-decoration: none;
       font-family: $font-content;
       color: #524641;
+      font-size: 1.125rem;
+    }
+
+    a:hover {
+      color: #d97852;
     }
   }
 }

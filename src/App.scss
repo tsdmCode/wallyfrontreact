@@ -1,3 +1,5 @@
+@use './assets/styles/variables' as globals;
+
 :root {
   --accentColor: #d97852;
   --background: #f9f9f9;
@@ -5,10 +7,24 @@
   --contentfontstack: 'Open sans', 'sans-serif';
 }
 
+body {
+  background-color: globals.$background-color;
+}
+
+:root,
+body {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .logo {

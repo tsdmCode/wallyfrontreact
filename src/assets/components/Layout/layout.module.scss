@@ -1,0 +1,8 @@
+@use '../../styles/variables' as globals;
+
+.layoutContainer {
+  margin-top: 0;
+  background-color: globals.$secondary-color;
+  height: 100vh;
+  padding: 0 2rem;
+}

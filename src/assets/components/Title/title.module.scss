@@ -1,0 +1,9 @@
+@use '../../styles/variables' as global;
+
+.titleStyle {
+  font-size: 2rem;
+  text-align: left;
+  color: global.$primary-color;
+  font-family: global.$font-main;
+  margin: 1rem 0rem;
+}

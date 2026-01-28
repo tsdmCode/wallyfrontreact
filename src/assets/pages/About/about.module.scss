@@ -1,0 +1,14 @@
+@use '../../styles/variables' as globals;
+
+.aboutFigureStyle {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+  figcaption {
+    font-family: globals.$font-content;
+    width: 50%;
+  }
+  img {
+    height: 300px;
+  }
+}

@@ -1,3 +1,5 @@
+import { Title } from '../components/Title/Title';
+
 export function Contact() {
-  return <h1>Contact!</h1>;
+  return <Title text={'Kontakt os!'} />;
 }

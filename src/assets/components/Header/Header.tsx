@@ -4,7 +4,7 @@ import style from './header.module.scss';
 export function Header() {
   return (
     <header className={style.header}>
-      <h1>Wallywood</h1>
+      <h3>Wallywood</h3>
       <NavBar />
     </header>
   );

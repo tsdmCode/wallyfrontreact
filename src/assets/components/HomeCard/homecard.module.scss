@@ -4,8 +4,15 @@
   display: flex;
   text-align: left;
   font-family: $font-content;
+  gap: 0.5rem;
+  height: 30vh;
   img {
     width: 140px;
-    height: 208px;
+    height: 100%;
+  }
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

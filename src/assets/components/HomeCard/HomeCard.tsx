@@ -1,5 +1,7 @@
 import style from './homecard.module.scss';
 import { Button } from '../Button/Button';
+import parse from 'html-react-parser';
+
 interface Genre {
   id: number;
   title: string;
@@ -21,9 +23,9 @@ export function HomeCard({ id, name, description, genres, imgurl }: HomeCardProp
       <figcaption>
         <h3>{name}</h3>
         <article>
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+          {parse(description)}
           <p>
-            Genres:
+            Genres:{' '}
             {genres.map((genre) => (
               <span>{genre.title}</span>
             ))}

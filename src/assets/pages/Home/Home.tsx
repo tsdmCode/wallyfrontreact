@@ -1,23 +1,11 @@
 import { useState, useEffect } from 'react';
 import { HomeCard } from '../../components/HomeCard/HomeCard';
+import { Title } from '../../components/Title/Title';
 import style from './home.module.scss';
-
-interface Genre {
-  id: number;
-  title: string;
-  slug: string;
-}
-
-interface apiResponse {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  genres: Genre[];
-}
+import type { MovieData } from '../../../types/movieType';
 
 export function Home() {
-  const [data, setData] = useState<apiResponse[]>([]);
+  const [data, setData] = useState<MovieData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,22 +24,22 @@ export function Home() {
   //   });
   return (
     <>
-      <h2>Sidste Nyt...</h2>
+      <img className={style.imgStyle} src="public/grafik-2/images/curtain.jpg" alt="" />
+      <Title text="Sidste Nyt..." />
       <article className={style.home}>
-        {data
-          ? data.map((card) => {
-              return (
-                <HomeCard
-                  key={card.id}
-                  id={card.id}
-                  name={card.name}
-                  description={card.description}
-                  genres={card.genres}
-                  imgurl={card.image}
-                />
-              );
-            })
-          : ''}
+        {data &&
+          data.map((card) => {
+            return (
+              <HomeCard
+                key={card.id}
+                id={card.id}
+                name={card.name}
+                description={card.description}
+                genres={card.genres}
+                imgurl={card.image}
+              />
+            );
+          })}
       </article>
     </>
   );

@@ -1,5 +1,44 @@
 @import '../../styles/variables';
 
-footer {
+.footerStyle {
   border-top: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  margin-top: 2rem;
+  color: $text-color;
+  h4 {
+    font-size: 1.125rem;
+    color: $primary-color;
+    font-family: $font-main;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      margin: 0;
+      font-family: $font-content;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.footerLists {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  ul:last-of-type {
+    margin-top: 0.25rem;
+  }
+
+  a {
+  }
+}
+
+.socialsStyle {
+  color: $icons-color;
 }
