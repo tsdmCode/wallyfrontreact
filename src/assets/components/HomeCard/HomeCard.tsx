@@ -16,14 +16,14 @@ interface HomeCardProps {
   imgurl: string;
 }
 
-export function HomeCard({ id, name, description, genres, imgurl }: HomeCardProps) {
+export function HomeCard({ id, name, description = '', genres, imgurl }: HomeCardProps) {
   return (
     <figure className={style.homeCard}>
       <img src={imgurl} alt={name} />
       <figcaption>
         <h3>{name}</h3>
         <article>
-          {parse(description)}
+          {description && <div>{parse(description)}</div>}
           <p>
             Genres:{' '}
             {genres.map((genre) => (
