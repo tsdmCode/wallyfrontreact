@@ -1,24 +1,24 @@
-import { useForm, type SubmitHandler } from 'react-hook-form';
 import { Title } from '../../components/Title/Title';
-import { Button } from '../../components/Button/Button';
-import style from './contact.module.scss';
-
-//jeg prøver lige react-hook-form
-
-interface IFormInput {
-  fullName: string;
-  email: string;
-  comment: string;
-}
+import { Form } from '../../components/Form/Form';
 
 export function Contact() {
-  const { register, handleSubmit } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
-
   return (
     <>
       <Title text="Kontakt os" />
-      <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
+      <Form
+        formData={[
+          { label: 'Dit Navn:', inputName: 'fullName', req: true, type: 'text' },
+          { label: 'Din email:', inputName: 'email', req: true, type: 'email.' },
+          { label: 'Kommentarer', inputName: 'comment', req: true, type: 'textarea' },
+        ]}
+        buttonText="Send"
+      />
+    </>
+  );
+}
+
+{
+  /* <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
         <label>
           Dit Navn: <span>*</span>
         </label>
@@ -32,7 +32,5 @@ export function Contact() {
         </label>
         <textarea {...(register('comment'), { required: true, rows: 15 })} />
         <Button text="Send" type="submit" />
-      </form>
-    </>
-  );
+ </form> */
 }

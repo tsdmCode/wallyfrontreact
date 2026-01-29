@@ -1,20 +1,11 @@
-import { useForm, type SubmitHandler } from 'react-hook-form';
 import { Title } from '../../components/Title/Title';
-import style from '../Contact/contact.module.scss';
-
-interface LoginFormInput {
-  userName: string;
-  password: string;
-}
+import { Form } from '../../components/Form/Form';
 
 export function Login() {
-  const { register, handleSubmit } = useForm<LoginFormInput>();
-  const onSubmit: SubmitHandler<LoginFormInput> = (data) => console.log(data); //ændrer det lige her senere når vi rent faktisk laver login funktionalitet
-
   return (
     <>
       <Title text={'Log in'} />
-      <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
+      {/* <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
         <label>
           Brugernavn: <span>*</span>
         </label>
@@ -23,7 +14,14 @@ export function Login() {
           Password: <span>*</span>
         </label>
         <input {...register('password', { required: true })} type="password" />
-      </form>
+      </form> */}
+      <Form
+        formData={[
+          { req: true, label: 'Brugernavn:', inputName: 'userName', type: 'text' },
+          { req: true, label: 'Password:', inputName: 'password', type: 'password' },
+        ]}
+        buttonText="Log in"
+      />
     </>
   );
 }
