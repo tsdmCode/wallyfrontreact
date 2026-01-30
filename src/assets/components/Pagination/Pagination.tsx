@@ -16,7 +16,7 @@ export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage, currentPa
 
   const paginate = (pageNumber, e) => {
     e.preventDefault();
-    setCurrentPage(pageNumber);
+    setCurrentPage(pageNumber - 1);
   };
 
   return (

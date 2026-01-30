@@ -7,16 +7,19 @@ import { Title } from '../../components/Title/Title';
 import { Poster } from '../../components/Poster/Poster';
 import { Genrelist } from '../../components/Genrelist/Genrelist';
 import { Pagination } from '../../components/Pagination/Pagination';
+import { Sort } from '../../components/Sort/Sort';
 
 export function Plakater() {
   const [selectedGenre, setSelectedGenre] = useState('komedie');
   const [currentPage, setCurrentPage] = useState(0);
+  const [sortKey, setSortKey] = useState('price');
+  const [direction, setDirection] = useState('asc');
   const { data, isLoading, error } = useFetch<Array<MovieData>>(
-    `http://localhost:3000/posters/list_by_genre/${selectedGenre}?sort_key=price`,
+    `http://localhost:3000/posters/list_by_genre/${selectedGenre}?sort_key=${sortKey}&sort_direction=${direction}`,
   );
 
   if (isLoading) {
-    return <h1>Loading data......</h1>;
+    return <h1>Loading data...</h1>;
   }
 
   if (error) {
@@ -25,7 +28,10 @@ export function Plakater() {
 
   return (
     <>
-      <Title text={'Plakater'} />
+      <header className={style.posterHeaderStyle}>
+        <Title text={'Plakater'} />
+        <Sort setSortKey={setSortKey} setDirection={setDirection} />
+      </header>
       <div className={style.pageContainerStyle}>
         <Genrelist setSelectedGenre={setSelectedGenre} setCurrentPage={setCurrentPage} />
         <div>

@@ -1,4 +1,16 @@
 .pageContainerStyle {
   display: grid;
   grid-template-columns: 1fr 2fr;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.posterHeaderStyle {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }

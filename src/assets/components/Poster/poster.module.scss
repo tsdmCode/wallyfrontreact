@@ -2,12 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   text-align: center;
-  gap: 4px;
-
+  height: 33%;
   img {
     max-width: 160px;
-    margin-right: 16px;
   }
 
   h4 {
