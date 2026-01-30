@@ -1,5 +1,11 @@
+@use '../../styles/variables' as global;
+
 .genrelistStyle {
   ul {
     list-style-type: none;
+
+    li {
+      font-family: global.$font-content;
+    }
   }
 }

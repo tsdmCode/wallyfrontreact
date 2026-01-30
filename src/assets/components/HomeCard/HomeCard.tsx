@@ -31,7 +31,7 @@ export function HomeCard({ id, name, description = '', genres, imgurl }: HomeCar
             ))}
           </p>
         </article>
-        <Button text="Læs mere!" />
+        <Button text="Læs mere!" type="button" />
       </figcaption>
     </figure>
   );

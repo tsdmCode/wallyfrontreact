@@ -1,8 +1,14 @@
+import type { Genre } from '../../../types/movieType';
 import { useFetch } from '../../hooks/useFetch';
 import style from './genrelist.module.scss';
 
-export function Genrelist({ setSelectedGenre }) {
-  const { data, isLoading, error } = useFetch('http://localhost:3000/genre');
+export function Genrelist({ setSelectedGenre, setCurrentPage }) {
+  const { data, isLoading, error } = useFetch<Array<Genre>>('http://localhost:3000/genre');
+
+  function handleClick(slug) {
+    setSelectedGenre(slug);
+    setCurrentPage(0);
+  }
 
   if (isLoading) {
     return <h3>Loading data......</h3>;
@@ -16,7 +22,7 @@ export function Genrelist({ setSelectedGenre }) {
     <div className={style.genrelistStyle}>
       <ul>
         {data?.map((genre) => (
-          <li key={genre.id} onClick={() => setSelectedGenre(genre.slug)}>
+          <li key={genre.id} onClick={() => handleClick(genre.slug)}>
             {genre.title}
           </li>
         ))}
