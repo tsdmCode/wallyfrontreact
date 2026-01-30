@@ -1,6 +1,13 @@
 import style from './pagination.module.scss';
 
-export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage, currentPage }) => {
+interface PaginationProps {
+  postsPerPage: number;
+  totalPosts: number;
+  setCurrentPage: () => number;
+  currentPage: number;
+}
+
+export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage, currentPage }: PaginationProps) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -14,7 +21,7 @@ export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage, currentPa
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className={style.paginationStyle}>
         {pageNumbers.map((number) => (
           <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
             <a onClick={(e) => paginate(number, e)} href="!#" className="page-link">

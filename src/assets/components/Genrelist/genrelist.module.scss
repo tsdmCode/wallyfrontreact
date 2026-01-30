@@ -1,6 +1,7 @@
 @use '../../styles/variables' as global;
 
 .genrelistStyle {
+  border-right: 1px solid black;
   ul {
     list-style-type: none;
 

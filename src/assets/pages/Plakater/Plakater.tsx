@@ -1,3 +1,4 @@
+import style from './plakater.module.scss';
 import { Grid } from '../../components/Grid/Grid';
 import { useFetch } from '../../hooks/useFetch';
 import { useState } from 'react';
@@ -25,7 +26,7 @@ export function Plakater() {
   return (
     <>
       <Title text={'Plakater'} />
-      <div>
+      <div className={style.pageContainerStyle}>
         <Genrelist setSelectedGenre={setSelectedGenre} setCurrentPage={setCurrentPage} />
         <div>
           <Grid gtc={3} gap={32}>

@@ -1,0 +1,13 @@
+@use '../../styles/variables' as global;
+
+.paginationStyle {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+
+  a {
+    padding: 0.75rem;
+    text-decoration: none;
+    background-color: global.$border-color;
+  }
+}
