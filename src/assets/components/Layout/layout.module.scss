@@ -3,6 +3,8 @@
 .layoutContainer {
   margin-top: 0;
   background-color: globals.$secondary-color;
-  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 0 2rem;
 }

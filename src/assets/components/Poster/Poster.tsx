@@ -8,13 +8,17 @@ interface PosterProps {
 }
 
 export function Poster({ imgurl, title, price }: PosterProps) {
+  function handleAdd() {
+    //igen added vi lidt her (kan også extractes til utils)
+  }
+
   return (
     <figure className={style.posterStyle}>
       <img src={imgurl} alt={title} />
       <figcaption>
         <h4>{title}</h4>
         <p>{price} kr.</p>
-        <Button text="Læg i kurv" type="button" />
+        <Button text="Læg i kurv" type="button" onClick={handleAdd} />
       </figcaption>
     </figure>
   );

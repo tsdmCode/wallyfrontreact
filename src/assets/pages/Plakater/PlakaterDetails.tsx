@@ -9,6 +9,7 @@ import { Genrelist } from '../../components/Genrelist/Genrelist';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { Sort } from '../../components/Sort/Sort';
 import { useParams } from 'react-router-dom';
+import { PosterDetails } from '../../components/PosterDetails/PosterDetails';
 
 export function PlakaterDetails() {
   let { slug } = useParams();
@@ -34,7 +35,18 @@ export function PlakaterDetails() {
       </header>
       <div className={style.pageContainerStyle}>
         <Genrelist setSelectedGenre={setSelectedGenre} setCurrentPage={setCurrentPage} />
-        <div>{slug}</div>
+        {data && (
+          <PosterDetails
+            id={data.id}
+            name={data.name}
+            description={data.description}
+            imgurl={data.image}
+            width={data.width}
+            height={data.height}
+            price={data.price}
+            stock={data.stock}
+          />
+        )}
       </div>
     </>
   );
