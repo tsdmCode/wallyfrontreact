@@ -4,6 +4,7 @@ import { Plakater } from './assets/pages/Plakater/Plakater';
 import { About } from './assets/pages/About/About';
 import { Contact } from './assets/pages/Contact/Contact';
 import { Login } from './assets/pages/Login/Login';
+import { PlakaterDetails } from './assets/pages/Plakater/PlakaterDetails';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
@@ -15,6 +16,7 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="plakater" element={<Plakater />} />
+            <Route path="plakater/:slug" element={<PlakaterDetails />} />
             <Route path="about" element={<About />} />
             <Route path="kontakt" element={<Contact />} />
             <Route path="login" element={<Login />} />

@@ -9,7 +9,7 @@ export function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'http://localhost:3000/posters?sort_key=random&limit=2&attributes=id,name,description,image';
+      const url = 'http://localhost:3000/posters?sort_key=random&limit=2&attributes=id,name,description,image,slug';
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
@@ -37,6 +37,7 @@ export function Home() {
                 description={card.description}
                 genres={card.genres}
                 imgurl={card.image}
+                slug={card.slug}
               />
             );
           })}

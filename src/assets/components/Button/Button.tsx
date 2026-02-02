@@ -5,9 +5,9 @@ interface ButtonProps {
   type: 'button' | 'submit' | 'reset';
 }
 
-export function Button({ text, type = 'button' }: ButtonProps) {
+export function Button({ text, type = 'button', onClick }: ButtonProps) {
   return (
-    <button className={style.buttonStyle} type={type}>
+    <button className={style.buttonStyle} type={type} onClick={onClick}>
       {text}
     </button>
   );
