@@ -1,9 +1,9 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as global;
 
 .buttonStyle {
   background-color: #d1b3a7;
   border-radius: 3px;
-  font-family: $font-content;
+  font-family: global.$font-content;
   width: fit-content;
   padding: 0.5rem;
 }

@@ -1,8 +1,8 @@
-@use '../../styles/variables' as globals;
+@use '../../styles/variables' as global;
 
 .layoutContainer {
   margin-top: 0;
-  background-color: globals.$secondary-color;
+  background-color: global.$secondary-color;
   display: flex;
   flex-direction: column;
   flex: 1;

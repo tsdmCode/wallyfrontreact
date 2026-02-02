@@ -1,4 +1,4 @@
-@import '../../styles/_variables';
+@use '../../styles/_variables' as global;
 
 .header {
   display: flex;
@@ -6,8 +6,8 @@
   align-items: end;
   border-bottom: 1px solid #aa8c7f;
   h3 {
-    color: $primary-color;
-    font-family: $font-main;
+    color: global.$primary-color;
+    font-family: global.$font-main;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 3.5rem;

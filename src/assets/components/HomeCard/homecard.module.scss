@@ -1,12 +1,12 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as global;
 
 .homeCard {
   display: flex;
   text-align: left;
-  font-family: $font-content;
+  font-family: global.$font-content;
   gap: 0.5rem;
   height: 30vh;
-  color: $text-color;
+  color: global.$text-color;
   img {
     width: 140px;
     height: 100%;

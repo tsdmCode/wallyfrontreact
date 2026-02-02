@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as global;
 
 .navBar {
   ul {
@@ -9,7 +9,7 @@
     li,
     a {
       text-decoration: none;
-      font-family: $font-content;
+      font-family: global.$font-content;
       color: #524641;
       font-size: 1.125rem;
     }

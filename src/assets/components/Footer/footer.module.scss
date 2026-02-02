@@ -1,24 +1,24 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as global;
 
 .footerStyle {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid global.$border-color;
   display: flex;
   justify-content: space-between;
   padding: 0rem 1rem 1rem 0rem;
   margin-top: auto;
-  color: $text-color;
+  color: global.$text-color;
 
   h4 {
     font-size: 1.125rem;
-    color: $primary-color;
-    font-family: $font-main;
+    color: global.$primary-color;
+    font-family: global.$font-main;
   }
 
   ul {
     list-style-type: none;
     li {
       margin: 0;
-      font-family: $font-content;
+      font-family: global.$font-content;
     }
   }
 
@@ -39,5 +39,5 @@
 }
 
 .socialsStyle {
-  color: $icons-color;
+  color: global.$icons-color;
 }
