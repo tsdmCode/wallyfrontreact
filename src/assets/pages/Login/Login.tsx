@@ -21,15 +21,14 @@ export function Login() {
 
     fetch(url, { method: 'POST', body: body })
       .then((res) => {
-        console.log('Response status:', res.status); // Log the status
+        console.log('Response status:', res.status);
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-        return res.text(); // Get raw text first
+        return res.text();
       })
       .then((text) => {
-        console.log('Raw response:', text); // Log what you got
-        const data = JSON.parse(text); // Then parse it
+        const data = JSON.parse(text);
         setUserData(data);
         setError('');
       })

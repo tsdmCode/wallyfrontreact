@@ -1,12 +1,13 @@
-@use '../../styles/variables' as globals;
+@use '../../styles/variables' as global;
 
 .aboutFigureStyle {
   display: flex;
   justify-content: space-between;
   height: 50vh;
   figcaption {
-    font-family: globals.$font-content;
+    font-family: global.$font-content;
     width: 50%;
+    color: global.$text-color;
   }
   img {
     height: 300px;

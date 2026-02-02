@@ -1,8 +1,26 @@
-$primary-color: #d97852;
-$secondary-color: #f9f9f9;
-$background-color: #5c1f06;
-$text-color: #524641;
-$border-color: #d1b3a7;
-$icons-color: #cccccc;
+:root {
+  --primary-color: #d97852;
+  --secondary-color: #f9f9f9;
+  --background-color: #5c1f06;
+  --text-color: #524641;
+  --border-color: #d1b3a7;
+  --icons-color: #cccccc;
+}
+
+:root[data-theme='dark'] {
+  --primary-color: #ff9b7f;
+  --secondary-color: #1a1a1a;
+  --background-color: #2d0f03;
+  --text-color: #e8ddd9;
+  --border-color: #6b5b52;
+  --icons-color: #999999;
+}
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$background-color: var(--background-color);
+$text-color: var(--text-color);
+$border-color: var(--border-color);
+$icons-color: var(--icons-color);
 $font-main: 'Titillium Web', sans-serif;
 $font-content: 'Open Sans', sans-serif;
