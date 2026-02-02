@@ -14,9 +14,8 @@ interface Form {
   type: string;
 }
 
-export function Form({ formData, buttonText }: formDataProps) {
+export function Form({ formData, buttonText, onSubmit }: formDataProps) {
   const { register, handleSubmit } = useForm();
-  const onSubmit: SubmitHandler = (data) => console.log(data);
 
   const renderedForm = formData.map((inp) => {
     return (
@@ -30,7 +29,7 @@ export function Form({ formData, buttonText }: formDataProps) {
   });
 
   return (
-    <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
+    <form className={style.formStyles} onSubmit={handleSubmit(onSubmit) || (() => {})}>
       {renderedForm}
       <Button text={buttonText} type="submit" />
     </form>

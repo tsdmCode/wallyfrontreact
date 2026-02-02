@@ -1,5 +1,5 @@
 import { createContext, type SetStateAction } from 'react';
-import type { UserData } from '../types/userType';
+import type { UserData } from '../../types/userType';
 
 // TS - inteface til typer
 interface AuthContextProps {
