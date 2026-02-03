@@ -5,6 +5,10 @@ export interface MovieData {
   slug: string;
   price: number;
   genres: Genre[];
+  description: string;
+  height: number;
+  width: number;
+  stock: number;
 }
 
 export interface Genre {
