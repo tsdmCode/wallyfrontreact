@@ -44,13 +44,13 @@ export function Plakater() {
               })
               .slice(currentPage * 9, currentPage * 9 + 9)}
           </Grid>
-          <Pagination
-            postsPerPage={9}
-            totalPosts={data?.length}
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
         </div>
+        <Pagination
+          postsPerPage={9}
+          totalPosts={data?.length}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </div>
     </>
   );

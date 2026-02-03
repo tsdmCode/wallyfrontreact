@@ -4,12 +4,13 @@ import { PiSmileyFill, PiSmileySadFill } from 'react-icons/pi';
 import { Button } from '../Button/Button';
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import type { MovieData } from '../../../types/movieType';
 // {"id":1501,"name":"Frost 2","slug":"frost-2","description":"<p>Dansk biografpremiere\t25.12.2019</p>\r\n","image":"https://info.kinorevuen.dk/wp-content/uploads/2021/01/frost-2-hvdplakat.jpg","width":70,"height":100,"price":100,"stock":3,"createdAt":"2026-01-27T10:15:07.000Z","updatedAt":"2026-01-27T10:15:07.000Z","genres":[{"id":4,"title":"Børne - Familiefilm","poster_genre_rel":{"id":17,"poster_id":1501,"genre_id":4}},{"id":10,"title":"Walt Disney - Pixar","poster_genre_rel":{"id":18,"poster_id":1501,"genre_id":10}}]}
 
 interface PosterProps {
   id: number;
   name: string;
-  imgurl: string;
+  image: string;
   width: number;
   height: number;
   price: number;
@@ -17,7 +18,7 @@ interface PosterProps {
   description: string;
 }
 
-export function PosterDetails({ id, name, description, imgurl, width, height, price, stock }: PosterProps) {
+export function PosterDetails({ id, name, description, image, width, height, price, stock }: MovieData) {
   const [amount, setAmount] = useState(0);
   const { userData } = useContext(AuthContext);
   const size = 24;
@@ -37,7 +38,7 @@ export function PosterDetails({ id, name, description, imgurl, width, height, pr
 
   return (
     <figure className={style.detailedPosterStyle}>
-      <img src={imgurl} alt={name} />
+      <img src={image} alt={name} />
       <figcaption>
         <article>
           <h3>{name}</h3>

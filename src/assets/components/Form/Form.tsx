@@ -1,11 +1,11 @@
-import { useForm } from 'react-hook-form';
+import { useForm, type SubmitHandler, type FieldValues } from 'react-hook-form';
 import { Button } from '../Button/Button';
 import style from './form.module.scss';
 
 interface formDataProps {
   formData: Form[];
   buttonText: string;
-  onSubmit: React.FormEvent;
+  onSubmit: SubmitHandler<FieldValues>;
 }
 
 interface Form {
@@ -34,7 +34,7 @@ export function Form({ formData, buttonText, onSubmit }: formDataProps) {
   });
 
   return (
-    <form className={style.formStyles} onSubmit={handleSubmit(onSubmit) || (() => {})}>
+    <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
       {renderedForm}
       <Button text={buttonText} type="submit" />
     </form>

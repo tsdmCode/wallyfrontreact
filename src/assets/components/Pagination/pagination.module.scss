@@ -3,11 +3,16 @@
 .paginationStyle {
   list-style-type: none;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
   margin-left: 1rem;
+  margin-top: -2rem;
+  text-align: center;
   a {
-    padding: 0.75rem;
+    display: inline-block;
+    width: 16px;
     text-decoration: none;
+    padding: 1rem;
     background-color: global.$border-color;
   }
 }

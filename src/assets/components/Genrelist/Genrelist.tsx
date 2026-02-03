@@ -3,11 +3,15 @@ import { useFetch } from '../../hooks/useFetch';
 import style from './genrelist.module.scss';
 import { useNavigate } from 'react-router-dom';
 
+interface GenrelistProps {
+  setSelectedGenre: () => void;
+}
+
 export function Genrelist({ setSelectedGenre, setCurrentPage }) {
   const { data, isLoading, error } = useFetch<Array<Genre>>('http://localhost:3000/genre');
   const navigate = useNavigate();
 
-  function handleClick(slug) {
+  function handleClick(slug: string) {
     navigate(`/plakater/genre/${slug}`);
     setSelectedGenre(slug);
     setCurrentPage(0);

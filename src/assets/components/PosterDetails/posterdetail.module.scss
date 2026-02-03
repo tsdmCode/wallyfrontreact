@@ -1,6 +1,7 @@
 @use '../../styles/variables' as global;
 
 .detailedPosterStyle {
+  margin-left: 1rem;
   display: flex;
   max-height: 50vh;
   gap: 1rem;

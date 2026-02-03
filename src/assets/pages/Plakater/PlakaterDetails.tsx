@@ -33,7 +33,7 @@ export function PlakaterDetails() {
             id={data.id}
             name={data.name}
             description={data.description}
-            imgurl={data.image}
+            image={data.image}
             width={data.width}
             height={data.height}
             price={data.price}
