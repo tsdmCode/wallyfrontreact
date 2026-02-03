@@ -8,6 +8,7 @@ import { Poster } from '../../components/Poster/Poster';
 import { Genrelist } from '../../components/Genrelist/Genrelist';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { Sort } from '../../components/Sort/Sort';
+import { useParams } from 'react-router-dom';
 
 export function Plakater() {
   const [selectedGenre, setSelectedGenre] = useState('komedie');
@@ -38,7 +39,7 @@ export function Plakater() {
           <Grid gtc={3} gap={32}>
             {data
               ?.map((item) => {
-                return <Poster imgurl={item.image} price={item.price} title={item.name} />;
+                return <Poster slug={item.slug} imgurl={item.image} price={item.price} title={item.name} />;
               })
               .slice(currentPage * 9, currentPage * 9 + 9)}
           </Grid>

@@ -5,16 +5,17 @@ interface PaginationProps {
   totalPosts: number;
   setCurrentPage: (arg0: number) => number;
   currentPage: number;
+  pageNumber: number;
 }
 
-export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage, currentPage }: PaginationProps) => {
+export const Pagination = ({ postsPerPage, totalPosts = 1, setCurrentPage, currentPage }: PaginationProps) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
 
-  const paginate = (pageNumber, e) => {
+  const paginate = (pageNumber: number, e: React.MouseEvent) => {
     e.preventDefault();
     setCurrentPage(pageNumber - 1);
   };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 interface ThemeContextProviderInterface {
   children: React.ReactNode;
+  toggleData: () => void;
 }
 
 export const ThemeContextProvider = ({ children }: ThemeContextProviderInterface) => {

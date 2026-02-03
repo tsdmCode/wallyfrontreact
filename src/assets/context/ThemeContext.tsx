@@ -4,6 +4,7 @@ import { createContext, type SetStateAction, type Dispatch } from 'react';
 interface ThemeContextProps {
   isDark: boolean;
   setIsDark: Dispatch<SetStateAction<boolean>>;
+  toggleData: () => void;
 }
 
 // Opret context og kald den ThemeContext

@@ -1,3 +1,5 @@
+@use '../../styles/variables' as global;
+
 .posterStyle {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,7 @@
   justify-content: space-between;
   text-align: center;
   height: 33%;
+  color: global.$text-color;
   img {
     max-width: 160px;
   }
