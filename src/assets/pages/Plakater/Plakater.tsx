@@ -11,7 +11,8 @@ import { Sort } from '../../components/Sort/Sort';
 import { useParams } from 'react-router-dom';
 
 export function Plakater() {
-  const [selectedGenre, setSelectedGenre] = useState('komedie');
+  const { genre } = useParams();
+  const [selectedGenre, setSelectedGenre] = useState(genre || 'komedie');
   const [currentPage, setCurrentPage] = useState(0);
   const [sortKey, setSortKey] = useState('price');
   const [direction, setDirection] = useState('asc');

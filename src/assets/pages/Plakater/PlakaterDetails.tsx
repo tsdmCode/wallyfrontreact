@@ -8,9 +8,9 @@ import { useParams } from 'react-router-dom';
 import { PosterDetails } from '../../components/PosterDetails/PosterDetails';
 
 export function PlakaterDetails() {
-  let { slug } = useParams();
-  const [selectedGenre, setSelectedGenre] = useState('komedie');
-  const [currentPage, setCurrentPage] = useState(0);
+  const { slug } = useParams();
+  const [_selectedGenre, setSelectedGenre] = useState('komedie');
+  const [_currentPage, setCurrentPage] = useState(0);
   const { data, isLoading, error } = useFetch<MovieData>(`http://localhost:3000/posters/${slug}`);
 
   if (isLoading) {

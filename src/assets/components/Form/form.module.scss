@@ -11,6 +11,10 @@
     color: global.$primary-color;
   }
 
+  input {
+    padding: 0.5rem;
+  }
+
   textarea {
     resize: none;
   }

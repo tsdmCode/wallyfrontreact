@@ -1,10 +1,11 @@
-import { useForm, type SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Button } from '../Button/Button';
 import style from './form.module.scss';
 
 interface formDataProps {
   formData: Form[];
   buttonText: string;
+  onSubmit: React.FormEvent;
 }
 
 interface Form {
@@ -23,7 +24,11 @@ export function Form({ formData, buttonText, onSubmit }: formDataProps) {
         <label>
           {inp.label} {inp.req && <span>*</span>}
         </label>
-        {inp.type != 'textarea' ? <input {...register(inp.inputName, { required: inp.req })} /> : <textarea />}
+        {inp.type != 'textarea' ? (
+          <input {...register(inp.inputName, { required: inp.req })} />
+        ) : (
+          <textarea rows={10} />
+        )}
       </>
     );
   });

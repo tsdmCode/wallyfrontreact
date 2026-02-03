@@ -15,8 +15,9 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="plakater" element={<Plakater />} />
             <Route path="plakater/:slug" element={<PlakaterDetails />} />
+            <Route path="plakater/genre/:genre" element={<Plakater />} />
+            <Route path="plakater/" element={<Plakater />} />
             <Route path="about" element={<About />} />
             <Route path="kontakt" element={<Contact />} />
             <Route path="login" element={<Login />} />
