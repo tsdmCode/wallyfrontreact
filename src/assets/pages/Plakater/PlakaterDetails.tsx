@@ -38,6 +38,7 @@ export function PlakaterDetails() {
             height={data.height}
             price={data.price}
             stock={data.stock}
+            genres={data.genres || []}
           />
         )}
       </div>

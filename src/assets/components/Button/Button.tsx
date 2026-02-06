@@ -3,7 +3,7 @@ import style from './button.module.scss';
 interface ButtonProps {
   text: string;
   type: 'button' | 'submit' | 'reset';
-  onClick: React.MouseEventHandler<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 export function Button({ text, type = 'button', onClick }: ButtonProps) {

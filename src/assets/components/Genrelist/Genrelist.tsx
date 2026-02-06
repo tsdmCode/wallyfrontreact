@@ -4,10 +4,11 @@ import style from './genrelist.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 interface GenrelistProps {
-  setSelectedGenre: () => void;
+  setSelectedGenre: (genre: string) => void;
+  setCurrentPage: (page: number) => void;
 }
 
-export function Genrelist({ setSelectedGenre, setCurrentPage }) {
+export function Genrelist({ setSelectedGenre, setCurrentPage }: GenrelistProps) {
   const { data, isLoading, error } = useFetch<Array<Genre>>('http://localhost:3000/genre');
   const navigate = useNavigate();
 

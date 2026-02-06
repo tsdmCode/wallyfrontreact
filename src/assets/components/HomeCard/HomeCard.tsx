@@ -18,7 +18,7 @@ interface HomeCardProps {
   slug: string;
 }
 
-export function HomeCard({ id, name, description = '', genres, imgurl, slug }: HomeCardProps) {
+export function HomeCard({ name, description = '', genres, imgurl, slug }: HomeCardProps) {
   const navigate = useNavigate();
 
   function handleClick() {

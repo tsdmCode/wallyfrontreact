@@ -24,7 +24,7 @@ export function Home() {
   //   });
   return (
     <>
-      <img className={style.imgStyle} src="public/grafik-2/images/curtain.jpg" alt="" />
+      <img className={style.imgStyle} src="/grafik-2/images/curtain.jpg" alt="" />
       <Title text="Sidste Nyt..." />
       <article className={style.home}>
         {data &&
@@ -37,7 +37,7 @@ export function Home() {
                 description={card.description}
                 genres={card.genres}
                 imgurl={card.image}
-                slug={card.slug}
+                slug={card.slug || 'unknown'}
               />
             );
           })}

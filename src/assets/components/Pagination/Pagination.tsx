@@ -3,7 +3,7 @@ import style from './pagination.module.scss';
 interface PaginationProps {
   postsPerPage: number;
   totalPosts: number;
-  setCurrentPage: (arg0: number) => number;
+  setCurrentPage: (arg0: number) => void;
   currentPage: number;
   pageNumber: number;
 }

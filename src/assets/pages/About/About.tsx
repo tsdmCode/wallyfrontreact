@@ -29,7 +29,7 @@ export function About() {
             est wabowum.
           </p>
         </figcaption>
-        <img src="public/grafik-2/images/300px-Unsettled_Tom.jpg" alt="" />
+        <img src="/grafik-2/images/300px-Unsettled_Tom.jpg" alt="" />
       </figure>
     </>
   );

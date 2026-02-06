@@ -36,7 +36,7 @@ export function Form({ formData, buttonText, onSubmit }: formDataProps) {
   return (
     <form className={style.formStyles} onSubmit={handleSubmit(onSubmit)}>
       {renderedForm}
-      <Button text={buttonText} type="submit" />
+      <Button text={buttonText} type="submit" onClick={() => {}} />
     </form>
   );
 }

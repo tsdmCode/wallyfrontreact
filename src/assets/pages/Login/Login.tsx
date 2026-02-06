@@ -1,13 +1,18 @@
 import { Title } from '../../components/Title/Title';
 import { Form } from '../../components/Form/Form';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { type SubmitHandler, type FieldValues } from 'react-hook-form';
+
+interface LoginFormData {
+  userName: string;
+  password: string;
+}
 
 export function Login() {
-  const [error, setError] = useState<string | null>(null);
   const { userData, setUserData } = useContext(AuthContext);
 
-  function postLogin(data: any) {
+  function postLogin(data: LoginFormData) {
     console.log(data);
 
     const email = data.userName;
@@ -30,11 +35,9 @@ export function Login() {
       .then((text) => {
         const data = JSON.parse(text);
         setUserData(data);
-        setError('');
       })
       .catch((error) => {
         console.error('Error logging in: ', error);
-        setError('Der opstod en fejl - prøv igen');
       });
   }
 
@@ -62,7 +65,7 @@ export function Login() {
             { req: true, label: 'Password:', inputName: 'password', type: 'password' },
           ]}
           buttonText="Log in"
-          onSubmit={postLogin}
+          onSubmit={postLogin as SubmitHandler<FieldValues>}
         />
       )}
     </>

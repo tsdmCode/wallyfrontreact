@@ -2,7 +2,7 @@ export interface MovieData {
   id: number;
   name: string;
   image: string;
-  slug: string;
+  slug?: string;
   price: number;
   genres: Genre[];
   description: string;

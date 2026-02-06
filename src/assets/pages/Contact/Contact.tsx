@@ -1,7 +1,12 @@
 import { Title } from '../../components/Title/Title';
 import { Form } from '../../components/Form/Form';
+import { type SubmitHandler, type FieldValues } from 'react-hook-form';
 
 export function Contact() {
+  const handleContactSubmit: SubmitHandler<FieldValues> = (data) => {
+    console.log('Contact form submitted:', data);
+  };
+
   return (
     <>
       <Title text="Kontakt os" />
@@ -12,6 +17,7 @@ export function Contact() {
           { label: 'Kommentarer', inputName: 'comment', req: true, type: 'textarea' },
         ]}
         buttonText="Send"
+        onSubmit={handleContactSubmit}
       />
     </>
   );

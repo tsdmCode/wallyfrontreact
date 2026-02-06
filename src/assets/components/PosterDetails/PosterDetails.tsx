@@ -7,22 +7,11 @@ import { AuthContext } from '../../context/AuthContext';
 import type { MovieData } from '../../../types/movieType';
 // {"id":1501,"name":"Frost 2","slug":"frost-2","description":"<p>Dansk biografpremiere\t25.12.2019</p>\r\n","image":"https://info.kinorevuen.dk/wp-content/uploads/2021/01/frost-2-hvdplakat.jpg","width":70,"height":100,"price":100,"stock":3,"createdAt":"2026-01-27T10:15:07.000Z","updatedAt":"2026-01-27T10:15:07.000Z","genres":[{"id":4,"title":"Børne - Familiefilm","poster_genre_rel":{"id":17,"poster_id":1501,"genre_id":4}},{"id":10,"title":"Walt Disney - Pixar","poster_genre_rel":{"id":18,"poster_id":1501,"genre_id":10}}]}
 
-interface PosterProps {
-  id: number;
-  name: string;
-  image: string;
-  width: number;
-  height: number;
-  price: number;
-  stock: number;
-  description: string;
-}
-
 export function PosterDetails({ id, name, description, image, width, height, price, stock }: MovieData) {
   const [amount, setAmount] = useState(0);
   const { userData } = useContext(AuthContext);
   const size = 24;
-  function handleAdd(e: React.MouseEvent) {
+  function handleAdd(e: React.FormEvent<HTMLFormElement>) {
     //her laver vi lige lidt cart logic når vi har auth implementeret
     e.preventDefault();
     if (userData) {
@@ -32,8 +21,8 @@ export function PosterDetails({ id, name, description, image, width, height, pri
     }
   }
 
-  function handleChange(e: React.ChangeEvent) {
-    setAmount(e.target.value);
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setAmount(parseInt(e.target.value) || 0);
   }
 
   return (
@@ -53,7 +42,7 @@ export function PosterDetails({ id, name, description, image, width, height, pri
           <footer>
             <form onSubmit={handleAdd}>
               <input value={amount} onChange={(e) => handleChange(e)} />
-              <Button text="Læg i kurv" type="submit" />
+              <Button text="Læg i kurv" type="submit" onClick={() => {}} />
             </form>
             <div>
               {stock > 0 ? (

@@ -40,16 +40,19 @@ export function Plakater() {
           <Grid gtc={3} gap={32}>
             {data
               ?.map((item) => {
-                return <Poster slug={item.slug} imgurl={item.image} price={item.price} title={item.name} />;
+                return (
+                  <Poster slug={item.slug || 'unknown'} imgurl={item.image} price={item.price} title={item.name} />
+                );
               })
               .slice(currentPage * 9, currentPage * 9 + 9)}
           </Grid>
         </div>
         <Pagination
           postsPerPage={9}
-          totalPosts={data?.length}
-          setCurrentPage={setCurrentPage}
+          totalPosts={data?.length || 0}
+          setCurrentPage={setCurrentPage as (page: number) => void}
           currentPage={currentPage}
+          pageNumber={currentPage + 1}
         />
       </div>
     </>
